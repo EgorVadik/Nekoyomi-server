@@ -1,0 +1,20 @@
+{
+    "name": "server",
+    "scripts": {
+        "dev": "bun run --hot src/index.ts",
+        "ngrok": "ngrok http --url=ringtail-literate-sculpin.ngrok-free.app 3000"
+    },
+    "dependencies": {
+        "@hono/zod-validator": "^0.4.3",
+        "axios": "^1.8.4",
+        "cheerio": "^1.0.0",
+        "hono": "^4.7.5",
+        "just-kebab-case": "^4.2.0",
+        "just-snake-case": "^3.2.0",
+        "zod": "^3.24.2"
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "@types/node": "^22.13.14"
+    }
+}
