@@ -1,6 +1,6 @@
 export const BASE_URL = 'https://www.mangakakalot.gg'
-export const SCRAPER_URL =
-    `https://api.scraperapi.com/?api_key=${process.env.SCRAPER_API_KEY}&url=${BASE_URL}` as const
+export const SCRAPER_URL = (env: string) =>
+    `https://api.scraperapi.com/?api_key=${env}&url=${BASE_URL}` as const
 export const MANGA_URL = '/manga'
 export const SEARCH_URL = '/search/story'
 export const LATEST_URL = '/manga-list/latest-manga'

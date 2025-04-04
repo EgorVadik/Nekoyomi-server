@@ -15,7 +15,11 @@ import {
     searchManga,
 } from './lib/scrape'
 
-const app = new Hono()
+const app = new Hono<{
+    Bindings: {
+        SCRAPER_API_KEY: string
+    }
+}>()
 
 app.use('*', logger())
 
@@ -46,7 +50,7 @@ app.get('/manga', zValidator('query', mangaSchema), async (c) => {
 
 app.get('/search', zValidator('query', searchSchema), async (c) => {
     const data = c.req.valid('query')
-    const result = await searchManga(data)
+    const result = await searchManga(data, c.env.SCRAPER_API_KEY)
     if (!result) return c.json({ error: 'Failed to search manga' }, 500)
     return c.json(result)
 })

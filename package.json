@@ -2,7 +2,8 @@
     "name": "server",
     "scripts": {
         "dev": "bun run --hot src/index.ts",
-        "ngrok": "ngrok http --url=ringtail-literate-sculpin.ngrok-free.app 3000"
+        "ngrok": "ngrok http --url=ringtail-literate-sculpin.ngrok-free.app 3000",
+        "deploy": "wrangler deploy --minify"
     },
     "dependencies": {
         "@hono/zod-validator": "^0.4.3",
@@ -14,7 +15,9 @@
         "zod": "^3.24.2"
     },
     "devDependencies": {
+        "@cloudflare/workers-types": "^4.20250404.0",
         "@types/bun": "latest",
-        "@types/node": "^22.13.14"
+        "@types/node": "^22.13.14",
+        "wrangler": "^4.7.0"
     }
 }
