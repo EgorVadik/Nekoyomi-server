@@ -2,8 +2,7 @@
     "name": "server",
     "scripts": {
         "dev": "bun run --hot src/index.ts",
-        "ngrok": "ngrok http --url=ringtail-literate-sculpin.ngrok-free.app 3000",
-        "deploy": "wrangler deploy --minify"
+        "ngrok": "ngrok http --url=ringtail-literate-sculpin.ngrok-free.app 3000"
     },
     "dependencies": {
         "@hono/zod-validator": "^0.4.3",
