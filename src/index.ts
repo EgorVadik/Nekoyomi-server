@@ -50,7 +50,7 @@ app.get('/manga', zValidator('query', mangaSchema), async (c) => {
 
 app.get('/search', zValidator('query', searchSchema), async (c) => {
     const data = c.req.valid('query')
-    const result = await searchManga(data, c.env.SCRAPER_API_KEY)
+    const result = await searchManga(data)
     if (!result) return c.json({ error: 'Failed to search manga' }, 500)
     return c.json(result)
 })

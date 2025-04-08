@@ -136,12 +136,12 @@ export async function getMangaDetails(args: MangaSchema) {
     }
 }
 
-export async function searchManga(args: SearchSchema, env: string) {
+export async function searchManga(args: SearchSchema) {
     try {
         const { query, page } = args
         const url = `${SEARCH_URL}/${query}`
         const { data } = await axios.get(url, {
-            baseURL: SCRAPER_URL(env),
+            baseURL: SCRAPER_URL,
         })
         const $ = cheerio.load(data)
         const lastPage = parseNumber($('a.page_last').text())
