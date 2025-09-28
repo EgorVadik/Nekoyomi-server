@@ -215,8 +215,8 @@ export async function getFilteredMangaList(args: FilteredMangaSchema) {
 
         const $ = cheerio.load(data)
         const lastPage = parseNumber($('a.page_last').text())
-        const mangaList = $('.truyen-list')
-            .find('.list-truyen-item-wrap')
+        const mangaList = $('.comic-list')
+            .find('.list-comic-item-wrap')
             .map((_, manga) => {
                 const _manga = $(manga)
                 const link = _manga.find('a.cover').attr('href')
