@@ -1,8 +1,8 @@
 import axios from 'axios'
-import { SCRAPER_URL } from './constants'
+import { BASE_URL } from './constants'
 
 export const api = axios.create({
-    baseURL: SCRAPER_URL,
+    baseURL: BASE_URL,
 })
 
 export const parseString = (str?: string) =>
